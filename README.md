@@ -17,7 +17,7 @@ netdiscover
 Support Tools For Mobile Hacking:
 ---
 Install SNAP
-```Connec
+```
 apt install snapd
 systemctl start snapd.service
 systemctl status snapd.service
