@@ -17,7 +17,7 @@ netdiscover
 Support Tools For Mobile Hacking:
 ---
 Install SNAP
-```
+```Connec
 apt install snapd
 systemctl start snapd.service
 systemctl status snapd.service
@@ -27,7 +27,13 @@ Install Scrcpy
 ```
 snap install scrcpy
 ```
-Android Debug Bridge (ADB Tools)
+Setup Mobile Hacking via Wireless
+```
+Step 1: Wi-Fi Connection
+Step 2: Developer Options
+Step 3: Wireless Debugging
+```
+Install Android Debug Bridge
 ```
 #Install ADB
 apt install android-tools-adb
