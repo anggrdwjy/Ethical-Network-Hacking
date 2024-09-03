@@ -1,6 +1,5 @@
 #Source : https://github.com/flozz/p0wny-shell
-#
-#
+
 <?php
 
 $SHELL_CONFIG = array(
