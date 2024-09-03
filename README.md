@@ -27,7 +27,7 @@ Install Scrcpy
 ```
 snap install scrcpy
 ```
-Setup Mobile Hacking via Wireless
+Setup Mobile Developer via Wireless
 ```
 Step 1: Wi-Fi Connection
 Step 2: Developer Options
