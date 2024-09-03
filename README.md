@@ -1,4 +1,7 @@
 # Ethical Hacking
+Disclaimer :
+---
+I am not responsible for any consequences caused by this script because this script was created for ethical hacking purposes.
 
 Learning :
 ---
