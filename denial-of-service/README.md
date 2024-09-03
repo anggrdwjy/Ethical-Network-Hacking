@@ -1,4 +1,12 @@
-# Configuration Slowloris
+# Disclaimer
+
+Log Web Server Apache :
+------
+```
+/var/log/apache2/tail -f ./access.log
+/var/log/apache2/access.log
+```
+
 Requirements:
 ------
 ```
