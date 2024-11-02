@@ -1,6 +1,4 @@
-# The content and practices described herein are intended solely for educational and informational purposes. 
-# Ethical hacking, also known as penetration testing, should only be performed with explicit, written consent from the owners of the systems, networks, or applications being tested. 
-# Failure to adhere to these principles may result in legal action and consequences. Always prioritize ethical standards and the security of information.
+# The content and practices described herein are intended solely for educational and informational purposes. Ethical hacking, also known as penetration testing, should only be performed with explicit, written consent from the owners of the systems, networks, or applications being tested. Failure to adhere to these principles may result in legal action and consequences. Always prioritize ethical standards and the security of information.
 
 ## What is Ethical Hacking ?
 Ethical hacking, often referred to as penetration testing or white-hat hacking, involves the practice of intentionally probing systems, networks, or applications to identify and fix vulnerabilities before malicious hackers can exploit them. Ethical hacking is a critical component of cybersecurity, helping to safeguard data and maintain trust in digital systems.
