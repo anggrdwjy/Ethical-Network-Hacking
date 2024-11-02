@@ -29,7 +29,7 @@ OSI Model
 | 2 | Data Link | Ethernet, Switch |
 | 1 | Physical | Hub, NIC, Cable |
 
-# Denial Of Service Web
+# Denial Of Service Web Server
 ## Slowloris (GET Attack)
 Slowloris Perl
 ```
@@ -43,11 +43,12 @@ python3 slowloris.py [IP_TARGET] --port 80 --sleeptime 1000
 ```
 
 ## Anonymousdoser (POST Attack)
+This Tools Running in Windows
 ```
 Website [URL/IP] : [IP_TARGET]
 Time [Seconds] : 9999
 ```
-## Log
+## Log Access Web Server
 Log Apache and Nginx
 ```
 /var/log/apache2/access.log
