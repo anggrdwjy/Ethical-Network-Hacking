@@ -224,4 +224,66 @@ Log SSL Strip
 sslstrip.log
 ```
 
+# PHP Shell
+## Bypass-LD 
+Build (File in Repository)
+```
+nano /var/www/html/hacking.c
+gcc -c -fPIC hacking.c -o hacking
+gcc -shared hacking -o hacking.so
+```
+BadConnect 
+```
+nano /var/www/html/hacking.php
+```
+## NetCat
+```
+nc -v -l -p [PORT]
+```
+## Harderning PHP Shell
+Harderning PHP
+```
+#edit php.ini
+#cd /etc/php/8.3/apache2/php.ini
+#disable_function
+
+disable_functions = curl_multi_exec, popen, passthru, exec, popen, symlink, proc_open, shell_exec, show_source, allow_url_fopen, system, passthru, parse_ini_file, show_source, exec, proc_open, php_uname, posix_getpwuid, setenv, main, apache_setenv, putenv, mail, link, mb_send_mail,pcntl_alarm,pcntl_fork,pcntl_waitpid,pcntl_wait,pcntl_wifexited,pcntl_wifstopped,pcntl_wifsignaled,pcntl_wifcontinued,pcntl_wexitstatus,pcntl_wtermsig,pcntl_wstopsig,pcntl_signal,pcntl_signal_get_handler,pcntl_signal_dispatch,pcntl_get_last_error,pcntl_strerror,pcntl_sigprocmask,pcntl_sigwaitinfo,pcntl_sigtimedwait,pcntl_exec,pcntl_getpriority,pcntl_setpriority,pcntl_async_signals,pcntl_unshare,phpinfo
+
+#putenv
+#open_basedir
+open_basedir = /var/www/html
+```
+Harderning Virtual Host
+```
+#VirtualHost_Configuration
+<VirtualHost *:80>
+    ServerAdmin [DOMAIN_SAMPLE]
+    ServerName [DOMAIN_SAMPLE]
+    ServerAlias [DOMAIN_SAMPLE]
+    DocumentRoot /home/[DOMAIN_SAMPLE]
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    <Directory /home/[DOMAIN_SAMPLE]>
+    php_admin_value open_basedir /home/[DOMAIN_SAMPLE]
+    </Directory>
+    <Directory /home/[DOMAIN_SAMPLE]>
+    php_admin_value upload_tmp_dir /home/[DOMAIN_SAMPLE]
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:443>
+        ServerName [DOMAIN_SAMPLE]
+        DocumentRoot /home/[DOMAIN_SAMPLE]
+        SSLEngine on
+        SSLCertificateFile /etc/apache2/ssl/[DOMAIN_SAMPLE].pem
+        SSLCertificateKeyFile /etc/apache2/ssl/[DOMAIN_SAMPLE].key
+        <Directory /home/[DOMAIN_SAMPLE]>
+        php_admin_value open_basedir /home/[DOMAIN_SAMPLE]
+        </Directory>
+        <Directory /home/[DOMAIN_SAMPLE]>
+        php_admin_value upload_tmp_dir /home/[DOMAIN_SAMPLE]
+        </Directory>
+</VirtualHost>
+```
+
  
