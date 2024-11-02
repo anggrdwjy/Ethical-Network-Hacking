@@ -12,7 +12,7 @@ Legal and Authorized: Ethical hackers operate with permission from the organizat
 5. Report Findings: After testing, ethical hackers provide detailed reports to organizations, outlining vulnerabilities and recommendations for improvement.
 
 # Summary Of Repository
-* [Summary Of Repository](#Summary Of Repository)
+* [Summary Of Repository](#Summary-Of-Repository)
 * [OSI Layer](#OSI-Layer)
   * [What is OSI Layer?](#What-is-OSI-Layer?)
   * [Table OSI Layer](#Table-OSI-Layer)
