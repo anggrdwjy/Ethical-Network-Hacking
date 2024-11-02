@@ -15,6 +15,7 @@ Legal and Authorized: Ethical hackers operate with permission from the organizat
 
 # OSI Layer
 ## What is OSI Layer?
+The OSI model, or Open Systems Interconnection model, is a conceptual framework used to understand and implement network communication. It divides the networking process into seven layers, each with specific functions. This model helps standardize communication processes, enabling interoperability between different systems and technologies.
 
 ## Table OSI Layer
 OSI Model
@@ -56,7 +57,7 @@ Optional (Live Report)
 ```
 tail -f ./access.log
 ```
-## Harderning
+## Harderning Web With IPTABLES
 IP Tables
 ```
 iptables -I INPUT -p tcp --dport 80 -m connlimit --connlimit-above 20 --connlimit-mask 40 -j DROP
