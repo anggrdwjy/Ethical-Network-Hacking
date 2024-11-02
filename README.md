@@ -256,6 +256,8 @@ sslstrip.log
 # PHP Shell
 ## Bypass-LD 
 Build (File in Repository)
+
+Source : https://github.com/flozz/p0wny-shell
 ```
 nano /var/www/html/hacking.c
 gcc -c -fPIC hacking.c -o hacking
