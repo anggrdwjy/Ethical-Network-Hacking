@@ -12,6 +12,35 @@ Legal and Authorized: Ethical hackers operate with permission from the organizat
 5. Report Findings: After testing, ethical hackers provide detailed reports to organizations, outlining vulnerabilities and recommendations for improvement.
 
 # Summary Of Repository
+* [Summary Of Repository](#Summary Of Repository)
+* [OSI Layer](#OSI-Layer)
+  * [What is OSI Layer?](#What-is-OSI-Layer?)
+  * [Table OSI Layer](#Table-OSI-Layer)
+* [Denial Of Service Web Server](#Denial-Of-Service-Web-Server)
+  * [Slowloris \(GET Attack)](#Slowloris-(GET-Attack))
+  * [Anonymousdoser \(POST Attack)](#Anonymousdoser-(POST-Attack))
+  * [Log Access Web Server](#Log-Access-Web-Server)
+  * [Harderning Web With IPTABLES](#Harderning-Web-With-IPTABLES)
+* [Router Exploit](#Router-Exploit)
+  * [Routersploit](#Routersploit)
+* [Scanning Port and Service](#Scanning-Port-and-Service)
+  * [NMAP](#NMAP)
+  * [Netdiscovery](#Netdiscovery)
+  * [Nbtscan](#Nbtscan)
+* [Brute Force](#Brute-Force)
+  * [Hydra](#Hydra)
+* [Reverse Shell](#Reverse-Shell)
+  * [Payload Msvenom](#Payload-Msvenom)
+  * [Hacking SMB With Metasploit](#Hacking-SMB-With-Metasploit)
+* [MITM (Man In The Middle)](#MITM-(Man-In-The-Middle))
+  * [Ettercap](#Ettercap)
+  * [SSL Strip \(Downgrade HTTPS to HTTP)](#SSL-Strip-(Downgrade-HTTPS-to-HTTP))
+* [PHP Shell](#PHP-Shell)
+  * [Bypass-LD](#Bypass-LD)
+  * [NetCat](#NetCat)
+  * [Harderning PHP Shell](#Harderning-PHP-Shell)
+* [Additional Resources](#Additional-Resources)
+  * [Ebook / Manuals](#Ebook-/-Manuals)
 
 # OSI Layer
 ## What is OSI Layer?
@@ -286,4 +315,6 @@ Harderning Virtual Host
 </VirtualHost>
 ```
 
+# Additional Resources
+## Ebook / Manuals
  
