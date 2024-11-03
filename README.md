@@ -277,6 +277,8 @@ apt install apache2
 apt install php
 ```
 Create shell.php
+
+Source : https://github.com/flozz/p0wny-shell
 ```
 nano /var/www/html/shell.php
 ---------------------------
@@ -287,6 +289,8 @@ Testing PHP Shell
 Access to Browser : http://192.168.xx.xx/shell.php
 ```
 ## Privilege Escalation
+Source : https://github.com/kurniawandata
+
 Step 1. Create Payload
 ```
 nano /var/www/html/hack.c
