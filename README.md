@@ -35,6 +35,7 @@ Legal and Authorized: Ethical hackers operate with permission from the organizat
 * [MITM (Man In The Middle)](#MITM-(Man-In-The-Middle))
   * [Ettercap](#Ettercap)
   * [SSL Strip \(Downgrade HTTPS to HTTP)](#SSL-Strip-(Downgrade-HTTPS-to-HTTP))
+  * [Xerosploit](#Xerosploit)
 * [PHP Shell](#PHP-Shell)
   * [Bypass-LD](#Bypass-LD)
   * [NetCat](#NetCat)
@@ -251,6 +252,21 @@ sslstrip -l 10000
 Log SSL Strip
 ```
 sslstrip.log
+```
+
+## Xerosploit
+Source : https://github.com/LionSec/xerosploit
+```
+git clone https://github.com/LionSec/xerosploit
+cd xerosploit && sudo python install.py
+sudo xerosploit
+```
+Example Sniffing
+```
+sniff
+run
+load sslstrip -> y
+ctrl + c -> stop
 ```
 
 # PHP Shell
