@@ -53,13 +53,13 @@ This model helps standardize communication processes, enabling interoperability 
 OSI Model
 | No | Layer | Example |
 | --- | --- | --- |
-| 7 | Application | HTTP, FTP, SMTP |
-| 6 | Presentation | HTTPS, SSL, TLS |
-| 5 | Session | NetBIOS, PPTP |
+| 7 | Application | HTTP, FTP, SMTP, Telnet, SNMP, NTP, DHCP |
+| 6 | Presentation | HTTPS, SSL, TLS, JPEG, MPEG, ASCII |
+| 5 | Session | NetBIOS, PPTP, DNS, SQL |
 | 4 | Transport | TCP, UDP |
-| 3 | Network | Router, IP, ICMP |
-| 2 | Data Link | Ethernet, Switch |
-| 1 | Physical | Hub, NIC, Cable |
+| 3 | Network | Router, IPSec, ARP, RIP, BGP, OSPF, IGRP, ICMP |
+| 2 | Data Link | Ethernet, Switch, VLAN, Mac Address |
+| 1 | Physical | Hub, NIC, Cable, Fiber, RS-232, E1, Wireless |
 
 # Denial Of Service Web Server
 ## Slowloris (GET Attack)
