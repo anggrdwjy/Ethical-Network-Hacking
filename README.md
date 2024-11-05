@@ -162,6 +162,11 @@ netdiscovery
 ## Nbtscan
 ```
 nbtscan [NETWORK_IP]
+
+nbtscan 192.168.1.1-254
+nbtscan -r 192.168.1.0/24
+nbtscan -v -s : 192.168.1.0/24
+nbtscan -f iplist
 ```
 
 # Brute Force
