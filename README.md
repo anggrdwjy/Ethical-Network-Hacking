@@ -154,6 +154,10 @@ exit
 ```
 nmap -sn [RANGE_IP]
 nmap -A [IP_TARGET]
+
+nmap -v -A [TARGET]
+nmap -v -sn 192.168.1.0/24
+nmap -v iR 10000 -Pn -p 80
 ```
 ## Netdiscovery
 ```
