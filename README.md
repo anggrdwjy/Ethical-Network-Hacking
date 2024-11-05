@@ -162,6 +162,8 @@ nmap -v iR 10000 -Pn -p 80
 ## Netdiscovery
 ```
 netdiscovery
+
+netdiscover -i eth0 -r 192.168.1.0/24
 ```
 ## Nbtscan
 ```
