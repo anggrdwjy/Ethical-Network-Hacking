@@ -23,6 +23,7 @@ Legal and Authorized: Ethical hackers operate with permission from the organizat
   * [Harderning Web With IPTABLES](#Harderning-Web-With-IPTABLES)
 * [Router Exploit](#Router-Exploit)
   * [Routersploit](#Routersploit)
+  * [Routersploit 3.0](#Routersploit-3.0)
 * [Scanning Port and Service](#Scanning-Port-and-Service)
   * [NMAP](#NMAP)
   * [Netdiscovery](#Netdiscovery)
